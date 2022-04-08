@@ -26,15 +26,20 @@ function load(opts) {
     'trackForm',
     'pageview',
     'identify',
+    'reset',
     'group',
     'track',
     'ready',
-    'reset',
     'alias',
+    'debug',
     'page',
     'once',
     'off',
-    'on'
+    'on',
+    'addSourceMiddleware',
+    'addIntegrationMiddleware',
+    'setAnonymousId',
+    'addDestinationMiddleware'
   ];
 
   // Define a factory to create stubs. These are placeholders
@@ -72,6 +77,8 @@ function load(opts) {
     var first = document.getElementsByTagName('script')[0];
     first.parentNode.insertBefore(script, first);
   };
+
+  analytics._writeKey =  opts.key;
 
   console.log(`SNIPPET_VERSION: ${opts.snippetVersion}`);
   // Add a version to keep track of what's in the wild.
