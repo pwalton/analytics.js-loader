@@ -73,8 +73,9 @@ function load(opts) {
     first.parentNode.insertBefore(script, first);
   };
 
+  console.log(`SNIPPET_VERSION: ${opts.snippetVersion}`);
   // Add a version to keep track of what's in the wild.
-  analytics.SNIPPET_VERSION = '3.0.1';
+  analytics.SNIPPET_VERSION = opts.snippetVersion || '3.0.1';
 
   // Load Analytics.js with your key, which will automatically
   // load the tools you've enabled for your account. Boosh!
